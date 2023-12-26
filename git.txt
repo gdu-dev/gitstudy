@@ -1,0 +1,63 @@
+* git
+1. 리눅스 기반
+2. git bash 실행
+3. 모든 git 명령은 git으로 시작함
+4. 모든 명령어는 대소문자를 구분함
+5. 명령어 구분은 공백으로 함(공백의 개수는 상관 없음)
+6. 유용한 바로 가기 키
+    1) 복사 : ctrl + insert
+    2) 붙이기 : shift + insert 또는 마우스 우클릭
+    3) 강제 종료 : ctrl + c
+
+* local repository
+1. 로컬 저장소
+2. 사용자의 컴퓨터에 만드는 git 저장소
+3. 만드는 방법
+git init
+4. .git 숨김 폴더 확인 (참고로 linux에서 마침표(.)으로 시작하는 건 숨김이라는 의미)
+
+* git 사용자 등록(최초 1회)
+git config --global user.email 이메일
+git config --global user.name 아이디
+
+* local repository에 파일 추가하기
+1. 임의의 파일 추가하기
+touch test.txt
+
+2. 파일 수정하기
+vi test.txt
+  - 입력 모드로 진입 : a 또는 i 또는 o
+  -  입력 모드 종료 : esc
+  - vi 에디터 종료
+    1) 저장 없이 종료 : 콜론 -> q!
+    2) 저장 하고 종료 : 콜론 -> wq 
+
+* local repository 상태 보기
+git status
+
+* local repository staging
+git add test.txt  (test.txt 파일 add 하기)
+git add .  (모든 파일 add 하기)
+
+* local repository commit
+git commit
+  - commit message 작성을 위해서 vim이 자동으로 열림
+  - commit message 작성하고 저장하고 종료하기
+git commit -m '커밋메시지'
+
+----------------------------------------------------
+
+* remote repository 만들기 (github.com에서 작업하기)
+Create Repository -> Public -> 옵션 체크 없이 생성
+
+----------------------------------------------------
+
+* local repository에 remote repository 등록하기
+git remote add origin https://github.com/gdu-dev/gitstudy.git
+
+  등록된 remote repository 이름은? origin
+
+----------------------------------------------------
+
+* local repository를 remote repository로 올리기
+git push origin master
